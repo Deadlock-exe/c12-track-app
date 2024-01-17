@@ -1,5 +1,4 @@
-import 'package:c12_track/lists/footprints_list.dart';
-import 'package:c12_track/main_ui/models/footprints.dart';
+import 'package:c12_track/lists/footprint.dart';
 import 'package:flutter/material.dart';
 import 'package:c12_track/main_ui/widgets/footprint_number.dart';
 
@@ -11,48 +10,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Footprints> _addedFootprints = [
-    Footprints(
-      footprintName: "Travel",
-      amount: 00,
-      suggestion: "meow",
-      footprintnames: FootprintName.travel,
-    ),
-    Footprints(
-      footprintName: "Energy",
-      amount: 00,
-      suggestion: "meow",
-      footprintnames: FootprintName.energy,
-    ),
-    Footprints(
-      footprintName: "Food",
-      amount: 00,
-      suggestion: "meow",
-      footprintnames: FootprintName.food,
-    ),
-    Footprints(
-      footprintName: "Other",
-      amount: 00,
-      suggestion: "meow",
-      footprintnames: FootprintName.other,
-    ),
-  ];
   @override
   Widget build(BuildContext context) {
-    Widget mainContent = const Center(
-      child: Text(
-        "No footprints yet",
-        style: TextStyle(
-          color: Color(0xFFFDFCE9),
+    Widget mainContent = const Column(
+      children: [
+        Footprint(
+          title: "Travel",
+          amount: 00,
+          suggestion: "suggestion",
+          icon: Icons.pedal_bike,
         ),
-      ),
+        Footprint(
+          title: "Energy",
+          amount: 00,
+          suggestion: "suggestion",
+          icon: Icons.energy_savings_leaf_outlined,
+        ),
+        Footprint(
+          title: "Food",
+          amount: 00,
+          suggestion: "suggestion",
+          icon: Icons.lunch_dining,
+        ),
+        Footprint(
+          title: "Other",
+          amount: 00,
+          suggestion: "suggestion",
+          icon: Icons.more_horiz,
+        ),
+      ],
     );
-
-    if (_addedFootprints.isNotEmpty) {
-      mainContent = FootprintsList(
-        footprintslist: _addedFootprints,
-      );
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -88,9 +75,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 20,
           ),
-          Expanded(
-            child: mainContent,
-          ),
+          mainContent,
         ],
       ),
     );

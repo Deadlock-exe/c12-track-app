@@ -1,10 +1,18 @@
-import 'package:c12_track/main_ui/models/footprints.dart';
 import 'package:flutter/material.dart';
 
 class Footprint extends StatelessWidget {
-  const Footprint(this.footprintInstance, {super.key});
+  const Footprint({
+    super.key,
+    required this.title,
+    required this.amount,
+    required this.suggestion,
+    required this.icon,
+  });
 
-  final Footprints footprintInstance;
+  final String title;
+  final double amount;
+  final String suggestion;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +21,7 @@ class Footprint extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
-          vertical: 24,
+          vertical: 30,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +29,7 @@ class Footprint extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  footprintInstance.footprintName,
+                  title,
                   style: const TextStyle(
                       color: Color(0xFFFDFCE9),
                       fontSize: 20,
@@ -31,14 +39,14 @@ class Footprint extends StatelessWidget {
                 Row(
                   children: [
                     Icon(
-                      footprintIcons[footprintInstance.footprintnames],
+                      icon,
                       color: const Color(0xFFFDFCE9),
                     ),
                     const SizedBox(
                       width: 8,
                     ),
                     Text(
-                      footprintInstance.amount.toString(),
+                      amount.toString(),
                       style: const TextStyle(
                         color: Color(0xFFFDFCE9),
                       ),
@@ -53,7 +61,7 @@ class Footprint extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  footprintInstance.suggestion.toString(),
+                  suggestion,
                   style: const TextStyle(
                     color: Color(0xFFFDFCE9),
                   ),
