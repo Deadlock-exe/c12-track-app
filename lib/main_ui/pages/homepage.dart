@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   maxLength: 20,
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                    label: Text("Add travel data"),
+                    label: Text("Enter distance travelled (in kms)"),
                   ),
                 ),
                 TextField(
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                   maxLength: 20,
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                    label: Text("Add energy data"),
+                    label: Text("Enter power consumption (in kWh)"),
                   ),
                 ),
                 TextField(
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                   maxLength: 20,
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                    label: Text("Add food data"),
+                    label: Text("Enter food consumption (in grams)"),
                   ),
                 ),
                 TextField(
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                   maxLength: 20,
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                    label: Text("Add other data"),
+                    label: Text("Add other data (if any)"),
                   ),
                 ),
                 ElevatedButton(
@@ -129,9 +129,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   onPressed: () {
                     setState(() {
-                      travelAmount = double.parse(_travelController.text);
-                      energyAmount = double.parse(_energyController.text);
-                      foodAmount = double.parse(_foodController.text);
+                      travelAmount = double.parse(_travelController.text) * 2.2;
+                      energyAmount =
+                          double.parse(_energyController.text) * 0.45;
+                      foodAmount = double.parse(_foodController.text) * 0.005;
                       otherAmount = double.parse(_otherController.text);
                     });
 
@@ -183,7 +184,7 @@ class _HomePageState extends State<HomePage> {
             height: 30,
           ),
           const Text(
-            "Today's carbon footprint",
+            "Today's carbon footprint (KGs)",
             style: TextStyle(
                 color: Color(0xFFFDFCE9),
                 fontSize: 20,
