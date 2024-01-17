@@ -1,6 +1,6 @@
 # c12_track
 
-A new Flutter project.
+Tracking user's daily carbon footprint and recommending personalised tips.
 
 ## Getting Started
 
