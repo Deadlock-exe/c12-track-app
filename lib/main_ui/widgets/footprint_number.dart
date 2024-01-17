@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class FootprintNumber extends StatelessWidget {
-  const FootprintNumber({super.key});
+  const FootprintNumber({
+    super.key,
+    required this.sum,
+  });
+
+  final double sum;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +19,10 @@ class FootprintNumber extends StatelessWidget {
       ),
       width: double.infinity,
       height: 200,
-      child: const Center(
+      child: Center(
         child: Text(
-          "000",
-          style: TextStyle(
+          sum.toString(),
+          style: const TextStyle(
             color: Color(0xFFFDFCE9),
             fontSize: 90,
             decoration: TextDecoration.none,
