@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567662902037",
+    "project_id": "c12-track-app",
+    "storage_bucket": "c12-track-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567662902037:android:1fc04a9ce186f80dcf071c",
+        "android_client_info": {
+          "package_name": "com.example.c12_track"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuEAV3A_l27AzaOlsHXdRKTX5094OjZgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
