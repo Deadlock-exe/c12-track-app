@@ -1,3 +1,5 @@
+import 'package:c12_track/main_ui/constants.routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:c12_track/main_ui/widgets/footprint.dart';
 import 'package:c12_track/main_ui/widgets/footprint_number.dart';
@@ -171,8 +173,14 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.add),
           ),
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.more_vert),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                loginRoute,
+                (route) => false,
+              );
+            },
+            icon: const Icon(Icons.logout),
           )
         ],
       ),
