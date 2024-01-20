@@ -2,15 +2,31 @@
 
 Tracking user's daily carbon footprint and recommending personalised tips.
 
-## Getting Started
+## User-Friendly Interface
 
-This project is a starting point for a Flutter application.
+C12 Track provides a seamless experience with a user-friendly interface. Users can easily sign up or log in to access personalized features that help them track and manage their carbon footprints.
 
-A few resources to get you started if this is your first Flutter project:
+## Carbon Footprint Tracking
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### What is a Carbon Footprint?
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A carbon footprint is the total amount of greenhouse gases, primarily carbon dioxide, that are emitted directly or indirectly by an individual, organization, event, or product. C12 Track allows users to calculate and track their carbon footprints in various aspects of their daily lives.
+
+### Tracking Categories
+
+- **Travel:** Monitor carbon emissions related to your transportation choices.
+- **Energy:** Track your energy consumption and identify ways to reduce it.
+- **Food:** Assess the environmental impact of your dietary choices.
+- **Other:** Consider additional factors contributing to your overall carbon footprint.
+
+## Personalized Suggestions
+
+C12 Track provides personalised suggestions based on the user's carbon footprint. These suggestions empower users to make eco-friendly choices in their daily lives.
+
+## Get Started
+
+1. **Sign Up:** Create an account to unlock personalized features.
+2. **Log In:** Returning users can log in to access their carbon footprint data.
+3. **Track and Reduce:** Use C12 Track to track your carbon footprint, receive personalized suggestions, and take steps towards a more sustainable lifestyle.
+
+Start your eco-friendly journey with C12 Track today!

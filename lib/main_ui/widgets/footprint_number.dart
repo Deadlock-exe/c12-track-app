@@ -18,7 +18,7 @@ class FootprintNumber extends StatelessWidget {
         horizontal: 0,
       ),
       width: double.infinity,
-      height: 140,
+      height: 130,
       child: Center(
         child: Text(
           sum.toString(),
