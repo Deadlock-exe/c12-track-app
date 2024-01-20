@@ -92,36 +92,124 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 16,
                 ),
-                TextField(
-                  controller: _travelController,
-                  maxLength: 20,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text("Enter distance travelled (in kms)"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 4,
+                    horizontal: 8,
+                  ),
+                  child: TextField(
+                    controller: _travelController,
+                    maxLength: 20,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      label: Text("Enter distance travelled (in kms)"),
+                      floatingLabelStyle: TextStyle(
+                        color: Color(0xFFFDFCE9),
+                      ),
+                      prefixIcon: Icon(Icons.pedal_bike),
+                      prefixIconColor: Color(0xFF013030),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFFDFCE9),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF013030),
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                TextField(
-                  controller: _energyController,
-                  maxLength: 20,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text("Enter power consumption (in kWh)"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 4,
+                    horizontal: 8,
+                  ),
+                  child: TextField(
+                    controller: _energyController,
+                    maxLength: 20,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      label: Text("Enter power consumption (in kWh)"),
+                      floatingLabelStyle: TextStyle(
+                        color: Color(0xFFFDFCE9),
+                      ),
+                      prefixIcon: Icon(Icons.energy_savings_leaf_outlined),
+                      prefixIconColor: Color(0xFF013030),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFFDFCE9),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF013030),
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                TextField(
-                  controller: _foodController,
-                  maxLength: 20,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text("Enter food consumption (in grams)"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 4,
+                    horizontal: 8,
+                  ),
+                  child: TextField(
+                    controller: _foodController,
+                    maxLength: 20,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      label: Text("Enter food consumed (in grams)"),
+                      floatingLabelStyle: TextStyle(
+                        color: Color(0xFFFDFCE9),
+                      ),
+                      prefixIcon: Icon(Icons.lunch_dining),
+                      prefixIconColor: Color(0xFF013030),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFFDFCE9),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF013030),
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-                TextField(
-                  controller: _otherController,
-                  maxLength: 20,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    label: Text("Add other data (if any)"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 4,
+                    horizontal: 8,
+                  ),
+                  child: TextField(
+                    controller: _otherController,
+                    maxLength: 20,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      label: Text("Enter other data (if any)"),
+                      floatingLabelStyle: TextStyle(
+                        color: Color(0xFFFDFCE9),
+                      ),
+                      prefixIcon: Icon(Icons.more_horiz),
+                      prefixIconColor: Color(0xFF013030),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFFFDFCE9),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0xFF013030),
+                          width: 1,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
                 ElevatedButton(
@@ -149,7 +237,12 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: const Text("Cancel"),
+                  child: const Text(
+                    "Cancel",
+                    style: TextStyle(
+                      color: Color(0xFFFDFCE9),
+                    ),
+                  ),
                 )
               ],
             ),
@@ -162,7 +255,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome UserXYZ"),
+        title: const Text("Welcome Deadlock"),
         backgroundColor: const Color(0xFF013030),
         foregroundColor: const Color(0xFFFDFCE9),
         actions: [

@@ -33,27 +33,75 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: const Color(0xFF008080),
       appBar: AppBar(
         title: const Text("Login"),
-        backgroundColor: const Color(0xFF008080),
+        backgroundColor: const Color(0xFF013030),
         foregroundColor: const Color(0xFFFDFCE9),
       ),
       body: Column(
         children: [
-          TextField(
-            controller: _email,
-            autocorrect: false,
-            keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(
-              label: Text("Enter email address"),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+              horizontal: 14,
+            ),
+            child: TextField(
+              controller: _email,
+              autocorrect: false,
+              keyboardType: TextInputType.emailAddress,
+              decoration: const InputDecoration(
+                label: Text("Enter email address"),
+                floatingLabelStyle: TextStyle(color: Color(0xFFFDFCE9)),
+                prefixIcon: Icon(Icons.email),
+                prefixIconColor: Color(0xFF013030),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFDFCE9),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF013030),
+                    width: 1,
+                  ),
+                ),
+              ),
+              style: const TextStyle(
+                color: Color(0xFFFDFCE9),
+              ),
             ),
           ),
-          TextField(
-            controller: _password,
-            obscureText: true,
-            autocorrect: false,
-            enableSuggestions: false,
-            decoration: const InputDecoration(
-              label: Text("Enter your password"),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 4,
+              horizontal: 14,
             ),
+            child: TextField(
+              controller: _password,
+              obscureText: true,
+              autocorrect: false,
+              enableSuggestions: false,
+              decoration: const InputDecoration(
+                label: Text("Enter your password"),
+                floatingLabelStyle: TextStyle(
+                  color: Color(0xFFFDFCE9),
+                ),
+                prefixIcon: Icon(Icons.password),
+                prefixIconColor: Color(0xFF013030),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFDFCE9),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF013030),
+                    width: 1,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
           ),
           ElevatedButton(
             onPressed: () async {
@@ -78,16 +126,32 @@ class _LoginPageState extends State<LoginPage> {
                 );
               }
             },
-            child: const Text("Login"),
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(
+                vertical: 14,
+                horizontal: 24,
+              ),
+            ),
+            child: const Text(
+              "Login",
+              style: TextStyle(
+                color: Color(0xFF013030),
+              ),
+            ),
           ),
-          ElevatedButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
                 registerRoute,
                 (route) => false,
               );
             },
-            child: const Text("New user? Regsiter now"),
+            child: const Text(
+              "New user? Regsiter now",
+              style: TextStyle(
+                color: Color(0xFFFDFCE9),
+              ),
+            ),
           ),
         ],
       ),

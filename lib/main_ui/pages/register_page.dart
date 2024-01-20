@@ -33,27 +33,75 @@ class _RegisterPageState extends State<RegisterPage> {
       backgroundColor: const Color(0xFF008080),
       appBar: AppBar(
         title: const Text("Regsiter"),
-        backgroundColor: const Color(0xFF008080),
+        backgroundColor: const Color(0xFF013030),
         foregroundColor: const Color(0xFFFDFCE9),
       ),
       body: Column(
         children: [
-          TextField(
-            controller: _email,
-            autocorrect: false,
-            keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(
-              label: Text("Enter email address"),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+              horizontal: 14,
+            ),
+            child: TextField(
+              controller: _email,
+              autocorrect: false,
+              keyboardType: TextInputType.emailAddress,
+              decoration: const InputDecoration(
+                label: Text("Enter email address"),
+                floatingLabelStyle: TextStyle(color: Color(0xFFFDFCE9)),
+                prefixIcon: Icon(Icons.email),
+                prefixIconColor: Color(0xFF013030),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFDFCE9),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF013030),
+                    width: 1,
+                  ),
+                ),
+              ),
+              style: const TextStyle(
+                color: Color(0xFFFDFCE9),
+              ),
             ),
           ),
-          TextField(
-            controller: _password,
-            obscureText: true,
-            autocorrect: false,
-            enableSuggestions: false,
-            decoration: const InputDecoration(
-              label: Text("Enter your password"),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 4,
+              horizontal: 14,
             ),
+            child: TextField(
+              controller: _password,
+              obscureText: true,
+              autocorrect: false,
+              enableSuggestions: false,
+              decoration: const InputDecoration(
+                label: Text("Enter a password"),
+                floatingLabelStyle: TextStyle(
+                  color: Color(0xFFFDFCE9),
+                ),
+                prefixIcon: Icon(Icons.password),
+                prefixIconColor: Color(0xFF013030),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFFFDFCE9),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF013030),
+                    width: 1,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
           ),
           ElevatedButton(
             onPressed: () async {
@@ -71,16 +119,32 @@ class _RegisterPageState extends State<RegisterPage> {
                 emailVerifyRoute,
               );
             },
-            child: const Text("Register"),
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(
+                vertical: 14,
+                horizontal: 24,
+              ),
+            ),
+            child: const Text(
+              "Register",
+              style: TextStyle(
+                color: Color(0xFF013030),
+              ),
+            ),
           ),
-          ElevatedButton(
+          TextButton(
             onPressed: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
                 loginRoute,
                 (route) => false,
               );
             },
-            child: const Text("Already a user?"),
+            child: const Text(
+              "Already a user? Login",
+              style: TextStyle(
+                color: Color(0xFFFDFCE9),
+              ),
+            ),
           ),
         ],
       ),

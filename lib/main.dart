@@ -11,16 +11,17 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
-        theme: ThemeData(
-          useMaterial3: true,
-        ),
-        home: const MainScreen(),
-        routes: {
-          loginRoute: (context) => const LoginPage(),
-          registerRoute: (context) => const RegisterPage(),
-          emailVerifyRoute: (context) => const EmailVerification(),
-          homeRoute: (context) => const HomePage(),
-        }),
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
+      home: const MainScreen(),
+      routes: {
+        loginRoute: (context) => const LoginPage(),
+        registerRoute: (context) => const RegisterPage(),
+        emailVerifyRoute: (context) => const EmailVerification(),
+        homeRoute: (context) => const HomePage(),
+      },
+    ),
   );
 }
 
