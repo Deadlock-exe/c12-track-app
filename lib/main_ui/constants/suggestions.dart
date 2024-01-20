@@ -29,11 +29,11 @@ String energySuggestion(double energyAmount) {
 String foodSuggestion(double foodAmount) {
   if (foodAmount == 0) {
     return "Yayy! No carbon footprints.";
-  } else if (foodAmount <= 5) {
+  } else if (foodAmount <= 1000) {
     return "Choose locally produced, seasonal, and plant-based foods. Minimize food waste by planning meals.";
-  } else if (5 < foodAmount && foodAmount < 10) {
+  } else if (1000 < foodAmount && foodAmount < 2200) {
     return "Balance meat consumption with plant-based options. Support local farmers and sustainable agricultural practices.";
-  } else if (10 < foodAmount && foodAmount < 20) {
+  } else if (2200 < foodAmount && foodAmount < 3500) {
     return "Shift towards a plant-based diet. Minimize processed and packaged food consumption.";
   } else {
     return "Your footprint is very high. Try implementing all possible measures to reduce footprint.";
