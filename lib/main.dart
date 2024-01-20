@@ -1,3 +1,4 @@
+import 'package:c12_track/firebase_options.dart';
 import 'package:c12_track/main_ui/constants/routes.dart';
 import 'package:c12_track/main_ui/pages/email_verification.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,8 +8,10 @@ import 'package:c12_track/main_ui/pages/login_page.dart';
 import 'package:c12_track/main_ui/pages/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(
     MaterialApp(
       theme: ThemeData(
