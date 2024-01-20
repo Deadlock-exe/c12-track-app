@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Footprint extends StatelessWidget {
   const Footprint({
@@ -60,10 +61,12 @@ class Footprint extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
-                  suggestion,
-                  style: const TextStyle(
-                    color: Color(0xFFFDFCE9),
+                Expanded(
+                  child: Text(
+                    suggestion,
+                    style: const TextStyle(
+                      color: Color(0xFFFDFCE9),
+                    ),
                   ),
                 ),
               ],

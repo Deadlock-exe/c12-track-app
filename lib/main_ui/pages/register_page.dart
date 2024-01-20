@@ -1,4 +1,4 @@
-import 'package:c12_track/main_ui/constants.routes.dart';
+import 'package:c12_track/main_ui/constants/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

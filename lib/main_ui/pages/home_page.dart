@@ -1,4 +1,5 @@
-import 'package:c12_track/main_ui/constants.routes.dart';
+import 'package:c12_track/main_ui/constants/routes.dart';
+import 'package:c12_track/main_ui/constants/suggestions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:c12_track/main_ui/widgets/footprint.dart';
@@ -28,6 +29,22 @@ class _HomePageState extends State<HomePage> {
     finalSum = travelAmount + energyAmount + foodAmount + otherAmount;
   }
 
+  String getTravelSuggestions(context) {
+    return travelSuggestion(travelAmount);
+  }
+
+  String getEnergySuggestions(context) {
+    return energySuggestion(energyAmount);
+  }
+
+  String getFoodSuggestions(context) {
+    return foodSuggestion(foodAmount);
+  }
+
+  String getOtherSuggestions(context) {
+    return otherSuggestion(otherAmount);
+  }
+
   @override
   void dispose() {
     _travelController.dispose();
@@ -39,33 +56,35 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget mainContent = Column(
-      children: [
-        Footprint(
-          title: "Travel",
-          amount: travelAmount,
-          suggestion: "suggestion",
-          icon: Icons.pedal_bike,
-        ),
-        Footprint(
-          title: "Energy",
-          amount: energyAmount,
-          suggestion: "suggestion",
-          icon: Icons.energy_savings_leaf_outlined,
-        ),
-        Footprint(
-          title: "Food",
-          amount: foodAmount,
-          suggestion: "suggestion",
-          icon: Icons.lunch_dining,
-        ),
-        Footprint(
-          title: "Other",
-          amount: otherAmount,
-          suggestion: "suggestion",
-          icon: Icons.more_horiz,
-        ),
-      ],
+    Widget mainContent = SingleChildScrollView(
+      child: Column(
+        children: [
+          Footprint(
+            title: "Travel",
+            amount: travelAmount.floorToDouble(),
+            suggestion: getTravelSuggestions(context),
+            icon: Icons.pedal_bike,
+          ),
+          Footprint(
+            title: "Energy",
+            amount: energyAmount.floorToDouble(),
+            suggestion: getEnergySuggestions(context),
+            icon: Icons.energy_savings_leaf_outlined,
+          ),
+          Footprint(
+            title: "Food",
+            amount: foodAmount.floorToDouble(),
+            suggestion: getFoodSuggestions(context),
+            icon: Icons.lunch_dining,
+          ),
+          Footprint(
+            title: "Other",
+            amount: otherAmount.floorToDouble(),
+            suggestion: getOtherSuggestions(context),
+            icon: Icons.more_horiz,
+          ),
+        ],
+      ),
     );
     void addFootprints(BuildContext context) {
       showModalBottomSheet(
@@ -278,25 +297,28 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       backgroundColor: const Color(0xFF008080),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          const SizedBox(
-            height: 30,
-          ),
-          const Text(
-            "Today's carbon footprint (KGs)",
-            style: TextStyle(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            const Text(
+              "Today's carbon footprint (KGs)",
+              style: TextStyle(
                 color: Color(0xFFFDFCE9),
                 fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-          FootprintNumber(sum: finalSum),
-          const SizedBox(
-            height: 20,
-          ),
-          mainContent,
-        ],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            FootprintNumber(sum: finalSum),
+            const SizedBox(
+              height: 20,
+            ),
+            mainContent,
+          ],
+        ),
       ),
     );
   }

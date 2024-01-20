@@ -1,4 +1,4 @@
-import 'package:c12_track/main_ui/constants.routes.dart';
+import 'package:c12_track/main_ui/constants/routes.dart';
 import 'package:c12_track/main_ui/pages/email_verification.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
